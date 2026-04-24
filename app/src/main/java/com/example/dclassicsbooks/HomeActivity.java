@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     // 1. Deklarasi variabel global untuk simpan username (Requirement task)
     public static String globalUsername = "";
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     globalUsername = userVal;
 
                     // Pindah ke halaman Home
-                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
                     startActivity(intent);
                     finish(); // Agar user tidak bisa klik back ke login lagi
                 }
