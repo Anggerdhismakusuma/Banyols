@@ -1,40 +1,201 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:gravity="center"
-    android:background="#FFFFFF">
+    android:background="#FFF9ED"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/ivlogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo_app"
-        android:layout_marginBottom="32dp"/>
-
-    <EditText
-        android:id="@+id/etUsername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input your username"
-        android:inputType="text"
-        android:layout_marginBottom="12dp"/>
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Input your password"
-        android:inputType="textPassword"
-        android:layout_marginBottom="24dp"/>
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/logo_dclassics" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/bg_button_login"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D'CLASSICS BOOKS"
+            android:textColor="#570013"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:fontFamily="@font/noto_serif"
+            android:layout_marginTop="16dp"/>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The curators of classics books"
+            android:textColor="#51606B"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/manrope"
+            android:layout_marginTop="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back!"
+                android:textSize="22sp"
+                android:textColor="#1F1C0E"
+                android:fontFamily="@font/noto_serif"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please enter your credentials to access the home page"
+                android:textColor="#51606B"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/manrope"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="32dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USERNAME"
+                android:fontFamily="@font/manrope"
+                android:textColor="#51606B"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/input_underline_bg"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_profile"
+                    app:tint="#8C6F71" />
+
+                <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:hint="e.g. Banyols Cantika Dhisma Handojo"
+                    android:textColorHint="#B9A5A4"
+                    android:textColor="#1F1C0E"
+                    android:fontFamily="@font/manrope"
+                    android:textSize="14sp"
+                    android:paddingStart="12dp"
+                    android:inputType="text"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use your real name"
+                android:textColor="#8C7071"
+                android:textSize="11sp"
+                android:fontFamily="@font/manrope"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASSWORD"
+                android:fontFamily="@font/manrope"
+                android:textColor="#51606B"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/input_underline_bg"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_lock"
+                    app:tint="#8C6F71" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="••••••••"
+                    android:textColorHint="#B9A5A4"
+                    android:textColor="#1F1C0E"
+                    android:fontFamily="@font/manrope"
+                    android:textSize="14sp"
+                    android:paddingStart="12dp"
+                    android:inputType="textPassword"
+                    android:importantForAutofill="no" />
+
+                <ImageView
+                    android:id="@+id/iv_show_password"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_visibility_off"
+                    app:tint="#8C6F71"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Must be at least 8 alphanumeric characters"
+                android:textColor="#8C7071"
+                android:textSize="11sp"
+                android:fontFamily="@font/manrope"
+                android:textStyle="italic"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="32dp" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/login_button_selector"
+                android:fontFamily="@font/manrope"
+                android:text="LOGIN"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
