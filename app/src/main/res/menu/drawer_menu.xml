@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@android:drawable/ic_menu_home"
-            android:title="Home" />
+            android:id="@+id/nav_all_books"
+            android:icon="@drawable/ic_book"
+            android:title="All Books" />
         <item
             android:id="@+id/nav_store"
-            android:icon="@android:drawable/ic_menu_mylocation"
+            android:icon="@drawable/ic_store"
             android:title="Our Store" />
         <item
             android:id="@+id/nav_logout"
-            android:icon="@android:drawable/ic_lock_power_off"
+            android:icon="@drawable/ic_logout"
             android:title="Log Out" />
     </group>
 </menu>

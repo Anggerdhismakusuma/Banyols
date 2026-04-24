@@ -114,9 +114,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:fontFamily="@font/noto_serif"
                         android:text="Featured Books"
-                        android:layout_weight="1"
                         android:textColor="#1F1C0E"
                         android:textSize="20sp"
                         android:textStyle="bold" />
