@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_classic">#2C3E50</color>
+    <color name="primary_hover">#3D566E</color>
+    <color name="label_grey">#51606B</color>
+    <color name="input_bg">#F9F6EF</color>
+    <color name="border_bottom">#D8CEC9</color>
+    <color name="icon_color">#8C6F71</color>
+    <color name="placeholder_color">#B9A5A4</color>
+    <color name="helper_text">#8C7071</color>
 </resources>
