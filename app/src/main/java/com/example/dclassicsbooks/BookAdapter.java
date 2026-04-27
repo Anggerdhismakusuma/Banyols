@@ -31,7 +31,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         holder.author.setText(book.author);
         holder.price.setText(book.price);
         // Kalau lu belum punya foto, biarin dibaris bawah ini error atau komenin dulu
-         holder.cover.setImageResource(book.imageResId);
+        holder.cover.setImageResource(book.imageResId);
     }
 
     @Override

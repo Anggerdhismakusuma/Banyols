@@ -32,10 +32,9 @@
         </androidx.cardview.widget.CardView>
 
         <!-- TEXT AREA -->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_height="120dp"
             android:layout_marginStart="16dp">
 
             <!-- TITLE -->
@@ -54,24 +53,25 @@
                 android:id="@+id/txtBookAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/txtBookTitle"
+                android:layout_marginTop="4dp"
                 android:textColor="@color/text_grey"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"/>
+                android:textSize="14sp"/>
 
             <!-- PRICE -->
             <TextView
                 android:id="@+id/txtBookPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:background="@color/bg_main"
                 android:textColor="@color/text_maroon"
                 android:textStyle="bold"
                 android:textSize="14sp"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"
-                android:layout_marginTop="10dp"/>
-
-        </LinearLayout>
+                android:paddingVertical="6dp"/>
+        </RelativeLayout>
 
     </LinearLayout>
 

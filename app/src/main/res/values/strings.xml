@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">D\'Classics Books</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">DClassicsBooks</string>
+
+    <string name="back">← Back</string>
+    <string name="buy">BUY NOW</string>
+    <string name="address_hint">Enter Address</string>
+    <string name="phone_hint">Enter Phone Number</string>
+    <string name="app_title">D\'CLASSICS\nTHE ARCHIVE</string>
+    <string name="fiction">FICTION</string>
+    <string name="non_fiction">NON-FICTION</string>
 </resources>
