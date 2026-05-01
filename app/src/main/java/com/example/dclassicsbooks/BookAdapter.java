@@ -1,12 +1,15 @@
 package com.example.dclassicsbooks;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
@@ -20,18 +23,31 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @NonNull
     @Override
     public BookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_book, parent, false);
         return new BookViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book book = bookList.get(position);
+
         holder.title.setText(book.title);
         holder.author.setText(book.author);
         holder.price.setText(book.price);
-        // Kalau lu belum punya foto, biarin dibaris bawah ini error atau komenin dulu
         holder.cover.setImageResource(book.imageResId);
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), BookDetailActivity.class);
+
+            intent.putExtra("title", book.title);
+            intent.putExtra("author", book.author);
+            intent.putExtra("price", book.price);
+            intent.putExtra("summary", book.summary);
+            intent.putExtra("image", book.imageResId);
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override

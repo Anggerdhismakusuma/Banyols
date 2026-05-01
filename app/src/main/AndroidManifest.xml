@@ -11,22 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DClassicsBooks">
+
+        <!-- LOGIN (optional nanti) -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />
 
+        <!-- HOME (optional) -->
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
 
+        <!-- 🔥 DETAIL PAGE (WAJIB TAMBAH INI) -->
+        <activity
+            android:name=".BookDetailActivity"
+            android:exported="false" />
+
+        <!-- 🔥 HALAMAN UTAMA -->
         <activity
             android:name=".BooksActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

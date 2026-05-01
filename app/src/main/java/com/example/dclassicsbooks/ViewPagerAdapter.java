@@ -11,7 +11,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if (position == 0) return new BookListFragment(); // Tab Fiksi
+        if (position == 0) return new FictionFragment(); // Tab Fiksi
         else return new NonFictionFragment(); // Tab Non-Fiksi
     }
 
