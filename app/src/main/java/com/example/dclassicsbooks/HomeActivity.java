@@ -47,8 +47,8 @@ public class HomeActivity extends AppCompatActivity {
 
         tvViewAll.setOnClickListener(v -> {
             // Nanti 'BooksActivity.class' ganti sama BooksPage yang dibuat ya darr
-            Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
-            startActivity(intent);
+            // Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
+            // startActivity(intent);
         });
     }
 
