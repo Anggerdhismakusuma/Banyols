@@ -1,14 +1,18 @@
 package com.example.dclassicsbooks;
 
 public class Book {
-    String title, author, price, summary;
-    int imageResId;
+    private String title;
+    private String author;
+    private int coverImage;
 
-    public Book(String title, String author, String price, String summary, int imageResId) {
+    public Book(String title, String author, int coverImage) {
         this.title = title;
         this.author = author;
-        this.price = price;
-        this.summary = summary;
-        this.imageResId = imageResId;
+        this.coverImage = coverImage;
     }
+
+    public String getTitle() { return title; }
+    public String getAuthor() { return author; }
+    public int getCoverImage() { return coverImage; }
 }
+

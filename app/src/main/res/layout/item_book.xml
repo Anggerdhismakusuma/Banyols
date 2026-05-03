@@ -1,78 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="4dp"
-    app:cardBackgroundColor="@color/bg_card">
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="#FBF3DC"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="14dp">
+        android:padding="12dp">
 
-        <!-- COVER -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="85dp"
-            android:layout_height="120dp"
-            app:cardCornerRadius="12dp">
+        <ImageView
+            android:id="@+id/iv_book_cover"
+            android:layout_width="80dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop" />
 
-            <ImageView
-                android:id="@+id/imgBookCover"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@android:color/darker_gray"
-                android:contentDescription="Book Cover"/>
-        </androidx.cardview.widget.CardView>
-
-        <!-- TEXT AREA -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginStart="16dp">
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:orientation="vertical">
 
-            <!-- TITLE -->
             <TextView
-                android:id="@+id/txtBookTitle"
+                android:id="@+id/tv_book_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_maroon"
-                android:textSize="16sp"
+                android:fontFamily="@font/noto_serif"
+                android:text="The Great Gatsby"
+                android:textColor="#570013"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope"
+                android:text="F. Scott Fitzgerald"
+                android:textColor="#757E82"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btn_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DETAILS"
+                android:textColor="#570013"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                android:maxLines="2"
-                android:ellipsize="end"/>
+                android:background="?attr/selectableItemBackground"
+                android:paddingTop="8dp"
+                android:paddingBottom="2dp" />
 
-            <!-- AUTHOR -->
-            <TextView
-                android:id="@+id/txtBookAuthor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtBookTitle"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/text_grey"
-                android:textSize="14sp"/>
+            <View
+                android:layout_width="55dp"
+                android:layout_height="1dp"
+                android:background="#D9C2B4" />
 
-            <!-- PRICE -->
-            <TextView
-                android:id="@+id/txtBookPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:background="@color/bg_main"
-                android:textColor="@color/text_maroon"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="6dp"/>
-        </RelativeLayout>
-
+        </LinearLayout>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>
