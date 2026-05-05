@@ -63,8 +63,7 @@ public class NonFictionFragment extends Fragment {
                 R.drawable.img_7
         ));
 
-        BookAdapter adapter = new BookAdapter(nonFictionBooks);
-        rvBooks.setAdapter(adapter);
+        rvBooks.setAdapter(new BookAdapter(getContext(), nonFictionBooks));
 
         return view;
     }

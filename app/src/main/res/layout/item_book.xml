@@ -45,28 +45,59 @@
                 android:textColor="#757E82"
                 android:textSize="14sp" />
 
+            <!-- Spacer untuk mendorong konten ke bawah -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/btn_details"
-                android:layout_width="wrap_content"
+            <!-- Wrapper untuk Details dan Price -->
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DETAILS"
-                android:textColor="#570013"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:background="?attr/selectableItemBackground"
-                android:paddingTop="8dp"
-                android:paddingBottom="2dp" />
+                android:paddingTop="8dp">
 
-            <View
-                android:layout_width="55dp"
-                android:layout_height="1dp"
-                android:background="#D9C2B4" />
+                <!-- Bagian Details -->
+                <LinearLayout
+                    android:id="@+id/layout_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:id="@+id/btn_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:textColor="#570013"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="?attr/selectableItemBackground"
+                        android:paddingBottom="2dp" />
+
+                    <View
+                        android:layout_width="55dp"
+                        android:layout_height="1dp"
+                        android:background="#D9C2B4" />
+                </LinearLayout>
+
+                <!-- Bagian Harga (Mepet Kanan) -->
+                <TextView
+                    android:id="@+id/tv_book_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:text="Rp 15.000,00"
+                    android:background="#FFF9ED"
+                    android:padding="5dp"
+                    android:textColor="#570013"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/noto_serif" />
+
+            </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF9ED"
+    android:background="@color/bg_main"
     tools:context=".HomeActivity">
 
     <LinearLayout
@@ -91,7 +91,7 @@
                         android:layout_centerVertical="true"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/ic_chevron_left"
-                        app:tint="#570013" />
+                        app:tint="#FFFFFF" />
 
                     <ImageButton
                         android:id="@+id/btn_next"
@@ -101,7 +101,7 @@
                         android:layout_centerVertical="true"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@drawable/ic_chevron_right"
-                        app:tint="#570013" />
+                        app:tint="#FFFFFF" />
                 </RelativeLayout>
 
                 <LinearLayout

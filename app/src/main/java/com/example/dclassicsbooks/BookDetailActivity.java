@@ -15,7 +15,6 @@ public class BookDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
 
-        // 🔹 INIT VIEW
         TextView title = findViewById(R.id.detailTitle);
         TextView author = findViewById(R.id.detailAuthor);
         TextView summary = findViewById(R.id.detailSummary);
@@ -26,13 +25,11 @@ public class BookDetailActivity extends AppCompatActivity {
         EditText phone = findViewById(R.id.inputPhone);
         Button buy = findViewById(R.id.btnBuy);
 
-        // 🔥 AMBIL DATA DARI INTENT
-        title.setText(getIntent().getStringExtra("title"));
-        author.setText(getIntent().getStringExtra("author"));
-        summary.setText(getIntent().getStringExtra("summary"));
-        image.setImageResource(getIntent().getIntExtra("image", 0));
+        title.setText(getIntent().getStringExtra("book_title"));
+        author.setText(getIntent().getStringExtra("book_author"));
+        summary.setText(getIntent().getStringExtra("book_synopsis"));
+        image.setImageResource(getIntent().getIntExtra("book_cover", 0));
 
-        // 🔙 BACK BUTTON
         back.setOnClickListener(v -> finish());
 
         // 🎯 BUTTON EFFECT (mousedown)

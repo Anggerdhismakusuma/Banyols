@@ -63,7 +63,15 @@ public class FictionFragment extends Fragment {
                 R.drawable.img_2
         ));
 
-        rvBooks.setAdapter(new BookAdapter(fictionBooks));
+        fictionBooks.add(new Book(
+                "Moby Dick",
+                "Herman Melville",
+                "Rp.250.000,00",
+                "The ship is commanded by Captain Ahab, who is bent on revenge against Moby Dick, a massive white sperm whale that bit off his leg on a previous voyage. Ahab drives his crew to destruction, ignoring warnings until the whale destroys the ship, killing all but Ishmael",
+                R.drawable.moby_dick
+        ));
+
+        rvBooks.setAdapter(new BookAdapter(getContext(), fictionBooks));
 
         return view;
     }

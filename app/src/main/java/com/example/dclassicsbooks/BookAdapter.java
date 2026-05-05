@@ -1,6 +1,7 @@
 package com.example.dclassicsbooks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,11 +35,17 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
         holder.tvTitle.setText(book.getTitle());
         holder.tvAuthor.setText(book.getAuthor());
         holder.ivCover.setImageResource(book.getCoverImage());
+        holder.tvPrice.setText(book.getPrice());
 
         holder.btnDetails.setOnClickListener(v -> {
             // Intent ke detail page (nanti tinggal buat DetailActivity-nya)
-            // Intent intent = new Intent(context, DetailBookActivity.class);
-            // context.startActivity(intent);
+            Intent intent = new Intent(context, BookDetailActivity.class);
+            intent.putExtra("book_title", book.getTitle());
+            intent.putExtra("book_author", book.getAuthor());
+            intent.putExtra("book_price", book.getPrice());
+            intent.putExtra("book_synopsis", book.getSynopsis());
+            intent.putExtra("book_cover", book.getCoverImage());
+            context.startActivity(intent);
         });
     }
 
@@ -47,13 +54,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivCover;
-        TextView tvTitle, tvAuthor, btnDetails;
+        TextView tvTitle, tvAuthor, btnDetails, tvPrice;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivCover = itemView.findViewById(R.id.iv_book_cover);
             tvTitle = itemView.findViewById(R.id.tv_book_title);
             tvAuthor = itemView.findViewById(R.id.tv_book_author);
+            tvPrice = itemView.findViewById(R.id.tv_book_price);
             btnDetails = itemView.findViewById(R.id.btn_details);
         }
     }
