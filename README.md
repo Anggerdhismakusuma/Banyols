@@ -83,7 +83,7 @@ MIT License
 For questions or feedback, open an issue or contact the repository owner.
 
 - Angger Dhisma Kusuma: kangger97@gmail.com
-- Dara Cantika Febrian Kinasih: daracantikakinasih12@gmail.com
+- Dara Cantika Febrian Kinasih: daracikn@gmail.com
 - Wilson Handojo: profw244@gmail.com
 
 ---
