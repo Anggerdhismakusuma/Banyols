@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.*;
 import java.util.*;
 
 public class FictionFragment extends Fragment {
-
+    
     public FictionFragment() {}
 
     @Nullable

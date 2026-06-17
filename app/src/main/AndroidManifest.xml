@@ -11,37 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DClassicsBooks">
-
+        <activity
+            android:name=".StoreActivity"
+            android:exported="false" />
         <!-- LOGIN (optional nanti) -->
         <activity
             android:name=".BookActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <!-- HOME (optional) -->
+            android:exported="false" /> <!-- HOME (optional) -->
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
-
-        <!-- 🔥 DETAIL PAGE (WAJIB TAMBAH INI) -->
+            android:exported="false" /> <!-- 🔥 DETAIL PAGE (WAJIB TAMBAH INI) -->
         <activity
             android:name=".BookDetailActivity"
-            android:exported="false" />
-
-        <!-- 🔥 HALAMAN UTAMA -->
+            android:exported="false" /> <!-- 🔥 HALAMAN UTAMA -->
         <activity
             android:name=".BooksActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
