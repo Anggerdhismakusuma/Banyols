@@ -16,7 +16,7 @@
             android:exported="false" />
         <!-- LOGIN (optional nanti) -->
         <activity
-            android:name=".BookActivity"
+            android:name=".BooksActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

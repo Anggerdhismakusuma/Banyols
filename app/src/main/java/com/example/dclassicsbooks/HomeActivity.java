@@ -2,6 +2,8 @@ package com.example.dclassicsbooks;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -46,9 +48,8 @@ public class HomeActivity extends AppCompatActivity {
         setupFeaturedBooks();
 
         tvViewAll.setOnClickListener(v -> {
-            // Nanti 'BooksActivity.class' ganti sama BooksPage yang dibuat ya darr
-            Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
-            startActivity(intent);
+             Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
+             startActivity(intent);
         });
     }
 
@@ -82,8 +83,17 @@ public class HomeActivity extends AppCompatActivity {
             tvNavUsername.setText(UserData.loggedInUsername);
         }
 
+        Menu menu = navigationView.getMenu();
+        if(menu.findItem(R.id.nav_home) != null){
+            menu.findItem(R.id.nav_home).setVisible(false);
+        }
+
         navigationView.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
+            if(id == R.id.nav_all_books){
+                Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
+                startActivity(intent);
+            }
             if (id == R.id.nav_logout) {
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -149,20 +159,19 @@ public class HomeActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable, 3000); // Geser tiap 3 detik
+                sliderHandler.postDelayed(sliderRunnable, 3000);
             }
         });
     }
 
     private void setupFeaturedBooks() {
-        rvFeatured.setLayoutManager(new LinearLayoutManager(this));
+        rvFeatured.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         List<Book> bookList = new ArrayList<>();
-        bookList.add(new Book("The Great Gatsby", "F. Scott Fitzgerald", R.drawable.gatsby));
-        bookList.add(new Book("Moby Dick", "Herman Melville", R.drawable.moby_dick));
-        bookList.add(new Book("Pride & Prejudice", "Jane Austen", R.drawable.pride_prejudice));
-        bookList.add(new Book("1984", "George Orwell", R.drawable.orwell_1984));
-
+        bookList.add(new Book("The Great Gatsby", "F. Scott Fitzgerald", R.drawable.thegreatgatsby, "Set in the glamorous yet hollow world of 1920s America, the story follows the mysterious Jay Gatsby and his obsession with rekindling a lost love. Beneath the wealth and parties lies a deeper tale of illusion, longing, and tragedy."));
+        bookList.add(new Book("Moby Dick", "Herman Melville", R.drawable.moby_dick, "Set in the glamorous yet hollow world of 1920s America, the story follows the mysterious Jay Gatsby and his obsession with rekindling a lost love. Beneath the wealth and parties lies a deeper tale of illusion, longing, and tragedy."));
+        bookList.add(new Book("Pride & Prejudice", "Jane Austen", R.drawable.img_2, "Elizabeth Bennet navigates issues of love, reputation, and class in a society driven by expectations. Her evolving relationship with the proud Mr. Darcy reveals how misunderstandings can give way to genuine connection."));
+        bookList.add(new Book("1984", "George Orwell", R.drawable.img, "In a dystopian society ruled by constant surveillance, Winston Smith secretly rebels against a regime that controls truth and freedom. As he questions reality, he risks everything in a world where independent thought is forbidden."));
         BookAdapter bookAdapter = new BookAdapter(this, bookList);
         rvFeatured.setAdapter(bookAdapter);
     }

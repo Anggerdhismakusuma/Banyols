@@ -1,21 +1,40 @@
 package com.example.dclassicsbooks;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class BooksActivity extends AppCompatActivity {
 
-    private TextView tabFiction;
-    private TextView tabNonFiction;
+    private TextView tabFiction, tabNonFiction;
     private ViewPager2 viewPagerBooks;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.toolbar);
+
+        setupToolbar();
+        setupNavigationDrawer();
 
         // Ngenalin tombol tab dan viewpager dari XML ke Java
         tabFiction = findViewById(R.id.tabFiction);
@@ -49,6 +68,49 @@ public class BooksActivity extends AppCompatActivity {
                     tabFiction.setBackgroundColor(Color.TRANSPARENT);
                 }
             }
+        });
+    }
+
+    private void setupToolbar(){
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
+        // Biar tombol hamburger di pojok kiri atas bisa buka sidebar
+        toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
+    }
+
+    private void setupNavigationDrawer(){
+        // 1. Ambil headerView dari NavigationView
+        View headerView = navigationView.getHeaderView(0);
+
+        // 2. Cari TextView username yang ada di nav_header.xml
+        TextView tvNavUsername = headerView.findViewById(R.id.tv_nav_username);
+
+        // 3. Set teksnya sesuai dengan user yang sedang login
+        if (tvNavUsername != null && UserData.loggedInUsername != null) {
+            tvNavUsername.setText(UserData.loggedInUsername);
+        }
+
+        Menu menu = navigationView.getMenu();
+        if (menu.findItem(R.id.nav_all_books) != null){
+            menu.findItem(R.id.nav_all_books).setVisible(false);
+        }
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_home) {
+                startActivity(new Intent(this, HomeActivity.class));
+                finish();
+            } else if (id == R.id.nav_store) {
+                startActivity(new Intent(this, HomeActivity.class));
+            } else if (id == R.id.nav_logout) {
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+            }
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
         });
     }
 }
