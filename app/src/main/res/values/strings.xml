@@ -8,4 +8,6 @@
     <string name="app_title">D\'CLASSICS\nTHE ARCHIVE</string>
     <string name="fiction">FICTION</string>
     <string name="non_fiction">NON-FICTION</string>
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
 </resources>
