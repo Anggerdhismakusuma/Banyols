@@ -79,27 +79,44 @@ public class HomeActivity extends AppCompatActivity {
     private void setupNavigationDrawer() {
         View headerView = navigationView.getHeaderView(0);
         tvNavUsername = headerView.findViewById(R.id.tv_nav_username);
+
         if (tvNavUsername != null) {
             tvNavUsername.setText(UserData.loggedInUsername);
         }
 
         Menu menu = navigationView.getMenu();
-        if(menu.findItem(R.id.nav_home) != null){
+
+        if (menu.findItem(R.id.nav_home) != null) {
             menu.findItem(R.id.nav_home).setVisible(false);
         }
 
         navigationView.setNavigationItemSelectedListener(item -> {
+
             int id = item.getItemId();
-            if(id == R.id.nav_all_books){
+
+            if (id == R.id.nav_store) {
+
+//                android.widget.Toast.makeText(
+//                        HomeActivity.this,
+//                        "STORE MENU CLICKED",
+//                        android.widget.Toast.LENGTH_SHORT
+//                ).show();
+
+                Intent intent = new Intent(HomeActivity.this, StoreActivity.class);
+                startActivity(intent);
+            } else if (id == R.id.nav_all_books) {
+
                 Intent intent = new Intent(HomeActivity.this, BooksActivity.class);
                 startActivity(intent);
-            }
-            if (id == R.id.nav_logout) {
+
+            } else if (id == R.id.nav_logout) {
                 Intent intent = new Intent(HomeActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
+
             }
+
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });

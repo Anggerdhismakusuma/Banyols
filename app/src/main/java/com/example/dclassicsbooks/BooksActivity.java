@@ -80,35 +80,48 @@ public class BooksActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
     }
 
-    private void setupNavigationDrawer(){
-        // 1. Ambil headerView dari NavigationView
+    private void setupNavigationDrawer() {
+
+        // Ambil header Navigation Drawer
         View headerView = navigationView.getHeaderView(0);
 
-        // 2. Cari TextView username yang ada di nav_header.xml
+        // Username di header
         TextView tvNavUsername = headerView.findViewById(R.id.tv_nav_username);
 
-        // 3. Set teksnya sesuai dengan user yang sedang login
         if (tvNavUsername != null && UserData.loggedInUsername != null) {
             tvNavUsername.setText(UserData.loggedInUsername);
         }
 
+        // Sembunyikan menu "All Books" karena sedang berada di halaman All Books
         Menu menu = navigationView.getMenu();
-        if (menu.findItem(R.id.nav_all_books) != null){
+        if (menu.findItem(R.id.nav_all_books) != null) {
             menu.findItem(R.id.nav_all_books).setVisible(false);
         }
+
         navigationView.setNavigationItemSelectedListener(item -> {
+
             int id = item.getItemId();
+
             if (id == R.id.nav_home) {
-                startActivity(new Intent(this, HomeActivity.class));
+
+                Intent intent = new Intent(BooksActivity.this, HomeActivity.class);
+                startActivity(intent);
                 finish();
+
             } else if (id == R.id.nav_store) {
-                startActivity(new Intent(this, HomeActivity.class));
+
+                Intent intent = new Intent(BooksActivity.this, StoreActivity.class);
+                startActivity(intent);
+                finish();
+
             } else if (id == R.id.nav_logout) {
-                Intent intent = new Intent(this, MainActivity.class);
+
+                Intent intent = new Intent(BooksActivity.this, MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
             }
+
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
         });
